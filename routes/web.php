@@ -10,6 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
+use RuntimeException;
+
+Route::get('/testerror', function(){
+	return Bugsnag::notifyException(new RuntimeException("Test error"));
+});
 
 Route::get('/', function () {
     return view('welcome');

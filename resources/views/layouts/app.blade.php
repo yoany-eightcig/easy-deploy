@@ -20,6 +20,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @include('sessions.head', [])
+
 </head>
 <body>
     <div id="app">
@@ -78,6 +81,11 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <hr>
+        <p class="text-center">
+            Copyright © 2019 Eightcig
+        </p>
+
     </div>
     @yield('scripts')
 </body>

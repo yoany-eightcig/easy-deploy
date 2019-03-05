@@ -36,9 +36,14 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['daily', 'single', 'bugsnag'],
             'ignore_exceptions' => false,
         ],
+
+        // Create a bugsnag logging channel:
+        'bugsnag' => [
+            'driver' => 'bugsnag',
+        ],        
 
         'single' => [
             'driver' => 'single',

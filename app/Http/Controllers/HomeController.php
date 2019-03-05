@@ -11,6 +11,15 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    public $webroot = [
+        "laravel" => "/public",
+        "python" => "/",
+        "symfony" => "/web",
+        "php" => "/",
+        "html" => "/",
+    ];
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,6 +32,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home')->with(["webroot" => $this->webroot]);
     }
 }
